@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>문자열 뒤집기</title>
+  </head>
+  <body>
+    <script>
+      function reverse(srcstring) {
+        return srcstring.split("").reverse().join("");
+      }
+      const inputString = prompt("문자열을 입력하세요:");
+      const reversedString = reverse(inputString);
+      document.write(
+        "원래 문자열: " + inputString + "<br>뒤집힌 문자열: " + reversedString
+      );
+    </script>
+  </body>
+</html>

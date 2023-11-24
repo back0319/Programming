@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>도서 대여</title>
+  </head>
+  <body>
+    <form name="fo" method="get" action="week03-register.html">
+      <h2>고객 정보 등록</h2>
+      <fieldset>
+        <p>이름: <input type="text" name="uname" size="20" /></p>
+        <p>
+          학년: <input type="text" name="country" list="countries" /><br />
+          <datalist id="countries">
+            <option value="1학년"></option>
+            <option value="2학년"></option>
+            <option value="3학년"></option>
+            <option value="4학년"></option>
+          </datalist>
+        </p>
+
+        <p>
+          학과 :
+          <select name="dept">
+            <option value="1">국어교육</option>
+            <option value="2" selected>영어교육</option>
+            <option value="3">컴퓨터교육</option>
+          </select>
+        </p>
+
+        <p>
+          성별 : <input type="radio" name="china" value="1" />
+          남자 &nbsp; &nbsp;
+          <input type="radio" name="china" value="2" checked />
+          여자<br />
+        </p>
+
+        <p>대여할 도서 :</p>
+        <ul>
+          <li>도서 1 <input type="checkbox" value="1" /></li>
+          <li>도서 2 <input type="checkbox" value="2" checked /></li>
+          <li>도서 3 <input type="checkbox" value="3" /></li>
+        </ul>
+
+        <p>전화번호 : <input type="tel" placeholder="010-1234-5678" /></p>
+        <p>
+          대여일 <input type="date" value="2023-09-01" /> 반납예정일
+          <input type="date" value="2023-10-01" />
+        </p>
+      </fieldset>
+
+      <p>
+        <input type="submit" value="완료" />
+      </p>
+    </form>
+  </body>
+</html>

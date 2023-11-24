@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>방향키로 이미지 움직이기 프로그램</title>
+    <script>
+      var canvas;
+      var canvasCtx; // base canvas
+      var canvasBuffer;
+      var imageCtx; // image canvas
+      var imageUnit = {}; // img Property
+      var keyPressOn = {}; //key pressed status
+      var img;
+      var draw;
+
+      function init() {
+        canvas = document.getElementById("canvas");
+        canvasCtx = canvas.getContext("2d");
+
+        imagecanvas = document.createElement("canvas");
+        imagecanvas.width = canvas.width;
+        imagecanvas.height = canvas.height;
+        imageCtx = imagecanvas.getContext("2d");
+
+        imageUnit = {
+          x: 100, //image width
+          y: 100, //image height
+          width: canvas.width / 2 - 50, //top left에서 x축으로 떨어진 거리
+          height: canvas.height / 2 - 50, //top left에서 y축으로 떨어진 거리
+          speed: 2, // 이미지 이동 속도. 클수록 빠름.
+        };
+
+        document.addEventListener("keydown", getKeyDown);
+        document.addEventListener("keyup", getKeyUp);
+
+        setImage();
+        draw = setInterval(moveLoop, 10); // 10ms 간격으로  moveLoop 함수를 호출함.
+      }
+      function moveLoop() {
+        calcKeyInnput(); // 이미지의 위치 계산. 만일 키를 누르면 이미지 위치 변화 발생.
+        displayAll(); // 캔버스 내용 다시 그려줌.
+      }
+
+      function calcKeyInnput() {
+        if (keyPressOn["38"]) imageUnit.height -= imageUnit.speed; //up
+        if (keyPressOn["40"]) imageUnit.height += imageUnit.speed; //down
+        if (keyPressOn["37"]) imageUnit.width -= imageUnit.speed; //left
+        if (keyPressOn["39"]) imageUnit.width += imageUnit.speed; //right
+        //수정된 부분
+        if (imageUnit.height < 0) imageUnit.height = 0;
+        if (imageUnit.height + imageUnit.y > canvas.height)
+          imageUnit.height = canvas.height - imageUnit.y;
+        if (imageUnit.width < 0) imageUnit.width = 0;
+        if (imageUnit.width + imageUnit.x > canvas.width)
+          imageUnit.width = canvas.width - imageUnit.x;
+      }
+
+      function displayAll() {
+        imageCtx.fillStyle = "purple";
+        imageCtx.fillRect(0, 0, canvas.width, canvas.height);
+
+        imageCtx.drawImage(
+          img,
+          imageUnit.width,
+          imageUnit.height,
+          imageUnit.x,
+          imageUnit.y
+        ); // 이미지캔버스 위에 이미지 놓기.
+        canvasCtx.drawImage(imagecanvas, 0, 0); // 캔버스 위에 이미지캔버스
+      }
+
+      function setImage() {
+        img = new Image();
+        img.src = "spongebob1.png";
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <canvas id="canvas" width="600" height="600"></canvas>
+  </body>
+  <script>
+    function getKeyDown(event) {
+      var keyValue;
+      if (event == null) return;
+      else keyValue = event.keyCode;
+
+      keyPressOn[keyValue] = true;
+    }
+
+    function getKeyUp(event) {
+      var keyValue;
+      if (event == null) keyValue = window.event.keyCode;
+      else keyValue = event.keyCode;
+
+      keyPressOn[keyValue] = false;
+    }
+  </script>
+</html>

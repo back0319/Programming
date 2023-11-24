@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS3선택자</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      ul {
+        margin: 50px;
+      }
+      li {
+        float: left;
+        list-style: none;
+        padding: 20px;
+      }
+
+      /* 구조선택자 : 나열된 요소의 순번으로 선택하는 방식 */
+      li:nth-child(1) {
+        background-color: red;
+      }
+      li:nth-child(2) {
+        background-color: orange;
+      }
+      li:nth-child(3) {
+        background-color: yellow;
+      }
+      li:nth-child(4) {
+        background-color: green;
+      }
+      li:nth-child(5) {
+        background-color: blue;
+      }
+      li:nth-child(6) {
+        background-color: navy;
+      }
+      li:nth-child(7) {
+        background-color: purple;
+      }
+
+      li:first-child {
+        border-radius: 10px 0 0 10px;
+      }
+      li:last-child {
+        border-radius: 0 10px 10px 0;
+      }
+
+      li:nth-child(odd) {
+        color: gray;
+      }
+      li:nth-child(even) {
+        color: white;
+      }
+
+      /* 1~3번까지 밑줄 */
+      li:nth-child(-n + 3) {
+        text-decoration: underline;
+      }
+
+      /* 4번이후부터 기울기 */
+      li:nth-child(n + 4) {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>red</li>
+      <li>orange</li>
+      <li>yellow</li>
+      <li>green</li>
+      <li>blue</li>
+      <li>navy</li>
+      <li>purple</li>
+    </ul>
+  </body>
+</html>

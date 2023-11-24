@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>난수 발생</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h3>표 만들기</h3>
+    <hr />
+    <table border="1" width="600">
+      <script>
+        var n, color;
+
+        document.write("<tr>");
+        for (var i = 0; i < 5; i++) {
+          document.write("<th>숫자 " + (i + 1) + "</td>");
+        }
+        document.write("</tr><tr>");
+
+        for (var i = 0; i < 5; i++) {
+          n = parseInt(prompt("숫자(0 ~ 15) ? ", 5));
+
+          color = n.toString(16) + n.toString(16);
+          document.write("<td align=center bgcolor = #ff00" + color + ">");
+          color = "#ff00" + color;
+          document.write(color.toUpperCase());
+          document.write("</td>");
+        }
+        document.write("</tr>");
+      </script>
+    </table>
+  </body>
+</html>

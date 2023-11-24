@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 7-3</title>
+  </head>
+  <body>
+    <h3>정렬하기</h3>
+    <div id="result"></div>
+    <script>
+      var studentInfo = [
+        ["강희수", "변정숙", "서진수", "이정", "이창수", "최호준", "하연희"],
+        [78, 86, 88, 90, 61, 72, 80],
+        [81, 89, 98, 80, 70, 78, 82],
+        [93, 58, 78, 86, 88, 90, 61],
+      ];
+
+      var Total = [0, 0, 0, 0, 0, 0, 0];
+      var Nostudent = studentInfo[0].length;
+      var result = document.getElementById("result");
+
+      function makeTotal() {
+        for (var i = 0; i < Nostudent; i++) {
+          (Total[i] =
+            studentInfo[1][i] * 0.2 +
+            (studentInfo[2][i] + studentInfo[3][i]) * 0.4),
+            2;
+          Total[i] = Total[i].toFixed(2); // 소숫점 이하 두자리
+        }
+        var sortedT = Total.toSorted();
+        sortedT.reverse();
+        return sortedT;
+      }
+      result.innerHTML = "";
+      document.write("학생의 수: " + Nostudent + "<br><hr><br>");
+      var sTotal = makeTotal();
+      for (i = 0; i < Nostudent; i++) {
+        document.write(Total[i] + " / ");
+      }
+      document.write("<hr>");
+      for (i = 0; i < Nostudent; i++) {
+        document.write(sTotal[i] + " / ");
+      }
+      document.write("<hr>");
+      for (i = 0; i < Nostudent; i++) {
+        var index = Total.indexOf(sTotal[i]);
+        document.write(studentInfo[0][index] + " / ");
+      }
+    </script>
+  </body>
+</html>

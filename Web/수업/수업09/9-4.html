@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>내 계산기</title>
+    <style>
+      div {
+        margin: 20px;
+        border: 1px;
+        solid: #dadada;
+        font-size: 40pt;
+        color: purple;
+      }
+      .opr {
+        background-color: gold;
+        font-size: 40px;
+        height: 130px;
+        width: 150px;
+        padding: 20;
+      }
+      .opd {
+        font-size: 40px;
+        height: 130px;
+        width: 150px;
+        padding: 20;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>계산 결과</h1>
+    <div id="result"></div>
+    <hr />
+    <table width="600px" height="600px">
+      <tr>
+        <td><button class="opr" id="add">+</button></td>
+        <td><button class="opr" id="sub">-</button></td>
+        <td><button class="opr" id="mul">*</button></td>
+        <td><button class="opr" id="div">/</button></td>
+      </tr>
+      <tr>
+        <td><button class="opd" id="one">1</button></td>
+        <td><button class="opd" id="two">2</button></td>
+        <td><button class="opd" id="thr">3</button></td>
+        <td><button class="opd" id="fou">4</button></td>
+      </tr>
+      <tr>
+        <td><button class="opd" id="fiv">5</button></td>
+        <td><button class="opd" id="six">6</button></td>
+        <td><button class="opd" id="sev">7</button></td>
+        <td><button class="opd" id="eig">8</button></td>
+      </tr>
+      <tr>
+        <td><button class="opd" id="nin">9</button></td>
+        <td><button class="opd" id="zer">0</button></td>
+        <td>
+          <button class="opr" id="calculate" onclick="calculate()">계산</button>
+        </td>
+        <td>
+          <button class="opr" id="cls" onclick="doclear()">지우기</button>
+        </td>
+      </tr>
+    </table>
+    <script>
+      var result = document.getElementById("result");
+      // 어떤 버튼이든 클릭을 하면, 해당 내용을 result 객체의 content로 등록하고 계속 이어나아간다.
+      // coding
+
+      function calculate() {
+        //   coding
+        //
+      }
+
+      function doclear() {
+        result.innerHTML = "";
+      }
+    </script>
+  </body>
+</html>

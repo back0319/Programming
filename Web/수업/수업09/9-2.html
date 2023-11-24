@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>visibility 프로퍼티</title>
+    <style>
+      span {
+        visibility: hidden;
+        color: blue;
+      }
+    </style>
+    <script>
+      function show() {
+        var objArray = document.getElementsByTagName("span");
+        for (var i = 0; i < objArray.length; i++) {
+          var obj = objArray[i];
+          //  (1)
+        }
+      }
+      function hide() {
+        var objArray = document.getElementsByTagName("span");
+        for (var i = 0; i < objArray.length; i++) {
+          var obj = objArray[i];
+          //   (2)
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h3>다음 빈 곳에 숨은 단어?&nbsp; &nbsp;</h3>
+    <button onclick="show()">show</button>
+    <button onclick="hide()">hide</button>
+    <hr />
+    <ul>
+      <li>오늘은 (<span>2023년 11월 2일</span>) you.</li>
+      <li>CSS is Cascading (<span>Style</span>) Sheet.</li>
+
+      <li>웹프로그래밍은? (<span>HTML+CSS+Javascript</span>).</li>
+    </ul>
+  </body>
+</html>

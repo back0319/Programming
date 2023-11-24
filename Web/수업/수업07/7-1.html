@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 7-1</title>
+  </head>
+  <body>
+    <h3>
+      입력받은 문자를 10px부터 5px씩 증가시키면서 입력받는 숫자 만큼 반복한 후
+      다시 줄이기
+    </h3>
+    <hr />
+    <script>
+      var c = prompt("출력할 문자는? ", "#");
+      var ntimes = parseInt(prompt("반복할 횟수는? ", "5"));
+      var j = 0;
+
+      ntimes *= 5;
+
+      for (let size = 10; size <= ntimes + 5; size += 5) {
+        // 5씩 증가
+        j++;
+        for (let i = 0; i < j; i++) {
+          document.write("<span ");
+          document.write("style='font-size:" + size + "px'>");
+          document.write(c);
+          document.write("</span>");
+        }
+        document.write("<br>");
+      }
+      j--;
+      for (let size = ntimes; size >= 10; size -= 5) {
+        // 5씩 증가
+        for (let i = 0; i < j; i++) {
+          document.write("<span ");
+          document.write("style='font-size:" + size + "px'>");
+          document.write(c);
+          document.write("</span>");
+        }
+        document.write("<br>");
+        j--;
+      }
+    </script>
+  </body>
+</html>

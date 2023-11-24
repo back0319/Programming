@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 3-5</title>
+  </head>
+  <body>
+    <h3>수강신청</h3>
+    <script>
+      function Student(no, name, dept, year) {
+      // 1 속성 정의하기
+      this.no = ...
+      ...
+      this.course = new Array() ; // 수강신청 과목 담기 this.enroll = function(cno, cname, credit) {
+      // 2 수강신청 메소드 완성하기 }
+      this.drop = function(cno) {
+      var length = this.course.length;
+      // 3 수강취소 메소드 완성하기
+      // 배열에서 this.course.splice(2,1) 함수는 인덱스 2 // 부터 한 개의 원소를 삭제하는 함수임.
+      }
+      this.printinfo = function() { var now = new Date();
+      // 4 출력 메소드 완성하기
+      } }
+      var aStudent = new Student("100","박찬정","컴퓨터교육",3); aStudent.enroll("CS101", "정보윤리", 3); aStudent.enroll("CS123", "컴퓨터수학", 3); aStudent.enroll("CS202", "자료구조", 3); aStudent.printinfo();
+        aStudent.drop("CS101");
+        aStudent.printinfo();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>표 만들기</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h3>표 만들기</h3>
+    <hr />
+    <table border="1" width="600">
+      <script>
+        var row, col;
+
+        row = parseInt(prompt("행의 수(0 ~ 9) ? ", 5));
+        col = parseInt(prompt("열의 수(0 ~ 9) ? ", 5));
+
+        for (var i = 0; i < row; i++) {
+          document.write("<tr height=50>");
+          for (var j = 0; j < col; j++) {
+            if (i % 2 == 0 && j % 2)
+              document.write("<td bgcolor=yellow>  &nbsp; </td>");
+            else if (i % 2 && j % 2 == 0)
+              document.write("<td bgcolor=yellowgreen>  &nbsp; </td>");
+            else document.write("<td>  &nbsp; </td>");
+          }
+          document.write("</tr>");
+        }
+      </script>
+    </table>
+  </body>
+</html>

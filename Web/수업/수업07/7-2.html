@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 7-2</title>
+  </head>
+  <body>
+    <h3>Palindrome</h3>
+    <script>
+      function palindrome(a, start, finish) {
+        document.write("<br>검사할 문자열: " + a + " ==> ");
+        for (var i = start; i < Math.floor(finish / 2); i++)
+          if (a[i] != a[finish - i - 1]) return false;
+        return true;
+      }
+
+      document.write(palindrome("mom", 0, 3));
+      document.write(palindrome("dead", 0, 4));
+      document.write(palindrome("우영우", 0, 3));
+    </script>
+  </body>
+</html>

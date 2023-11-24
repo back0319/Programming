@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>3-1</title>
+    <style>
+      .rotate-image {
+        animation: rotate_image 1s linear infinite;
+        transform-origin: 50% 50%;
+      }
+      @keyframes rotate_image {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <img src="pinwheel.png" alt="Rotating Image" class="rotate-image" />
+    </div>
+  </body>
+</html>

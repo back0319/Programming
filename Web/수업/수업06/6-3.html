@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>문제 6-3 숫자 패턴 알아맞히기</title></head>
+<body>
+<h3>패턴 맞히기</h3>
+<hr>
+<script>
+var correctAns =0;
+var wrongAns = 0;
+var pattern = [[2, 4, 6, 8],[13, 16, 19, 22], [2, 3, 5, 7, 11], [1, 1, 2, 3, 5, 8], [31, 28, 31, 30, 31]];
+var promptstr = "" ;
+var totalresult="";
+
+for (var i=0; i<5; i++) {
+    plen = pattern[i].length ;
+    
+
+
+
+
+    promptstr = " - [" + pattern[i] + "]" ;
+    if (result) promptstr += " 잘 했어요. 축하해요! \n" ;
+    else promptstr += " 정답은 " + pattern[i][plen-1] + " 입니다.\n" ; 
+    totalresult += "<p>" + promptstr ;
+}              
+document.write(totalresult) ;
+totalquestions = correctAns + wrongAns ;
+document.write("<hr>" + totalquestions + "개 패턴중 " + correctAns + "개 맞았어요.") ;
+</script>
+</body>
+</html>

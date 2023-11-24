@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>2-1</title>
+    <style>
+      .color-box {
+        width: 200px;
+        height: 30px;
+        background: linear-gradient(to right, green 0%, red 50%, yellow 100%);
+        animation: colorChange 5s linear infinite;
+      }
+      @keyframes colorChange {
+        0% {
+          background: linear-gradient(to right, green 0%, red 50%, yellow 100%);
+        }
+
+        25% {
+          background: linear-gradient(to right, yellow 0%, green 50%, red 100%);
+        }
+
+        50% {
+          background: linear-gradient(to right, red 0%, yellow 50%, green 100%);
+        }
+
+        75% {
+          background: linear-gradient(to right, green 0%, red 50%, yellow 100%);
+        }
+
+        100% {
+          background: linear-gradient(to right, yellow 0%, green 50%, red 100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="color-box"></div>
+  </body>
+</html>

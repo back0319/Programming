@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>리터럴 표기법으로 객체 만들기</title>
+    <script>
+      function Book(title, author, price) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+        this.printaBook = function () {
+          document.write("<ul>");
+          document.write("<li> title : " + this.title);
+          document.write("<li> author : " + this.author);
+          document.write("<li> price : " + this.price);
+          document.write("</ul>");
+        };
+      }
+
+      function Library(id) {
+        this.id = id;
+        this.booklist = Array();
+
+        this.insertbook = function (title, author, price) {
+          let aBook = new Book(title, author, price);
+          this.booklist.push(aBook);
+        };
+
+        this.searchbook = function (title) {
+          var index = -1;
+          var l = this.booklist.length;
+          for (var i = 0; i < l; i++) {
+            if (this.booklist[i].title == title) {
+              index = i;
+              break;
+            }
+          }
+          if (index >= 0)
+            document.write(
+              title +
+                this.booklist[index].author +
+                this.booklist[index].price +
+                "<br>"
+            );
+          else document.write("찾는 책이 없습니다. <br>");
+        };
+
+        this.printallbook = function () {
+          var bl = this.booklist.length;
+          document.write("<ul>");
+          for (var i = 0; i < bl; i++) {
+            document.write("<li>" + this.booklist[i].title);
+          }
+          document.write("</ul>");
+        };
+      }
+    </script>
+  </head>
+  <body>
+    <h3>프로토타입으로 객체 만들기</h3>
+    <hr />
+    <script>
+      let L1 = new Library("cj");
+
+      L1.insertbook("웹앱프로그래밍", "강기찬", 30000);
+      L1.insertbook("안드로이드 스투디오", "홍길동", 20000);
+      L1.printallbook();
+      L1.insertbook("자바스크립트", "김철수", 25000);
+      L1.printallbook();
+      L1.booklist[0].printaBook();
+    </script>
+  </body>
+</html>

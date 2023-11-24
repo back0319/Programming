@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>길이 변환</title>
+  </head>
+  <body>
+    <h1>길이 변환</h1>
+    <hr />
+    <p id="result"></p>
+    <hr />
+    <button onclick="convertToCentimeters()">인치를 센티미터로 변환</button>
+    <button onclick="convertToInches()">센티미터를 인치로 변환</button>
+    <script>
+      function inchesToCentimeters(inches) {
+        return inches * 2.54;
+      }
+      function centimetersToInches(centimeters) {
+        return centimeters / 2.54;
+      }
+      function convertToCentimeters() {
+        const inches = prompt("인치를 입력하세요:");
+        const centimeters = inchesToCentimeters(inches);
+        const resultElement = document.getElementById("result");
+        resultElement.innerHTML =
+          inches + " 인치는 " + centimeters + " 센티미터입니다.";
+      }
+      function convertToInches() {
+        const centimeters = prompt("센티미터를 입력하세요:");
+        const inches = centimetersToInches(centimeters);
+        const resultElement = document.getElementById("result");
+        resultElement.innerHTML =
+          centimeters + " 센티미터는 " + inches + " 인치입니다.";
+      }
+    </script>
+  </body>
+</html>

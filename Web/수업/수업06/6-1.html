@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      div {
+        font-size: 20pt;
+        color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>주사위 확률</h3>
+    <div id="r"></div>
+    <script>
+      var r = document.getElementById("r");
+      var die1 = Math.floor(Math.random() * 6) + 1;
+      var die2 = Math.floor(Math.random() * 6) + 1;
+      var different = 0;
+      var same = 0;
+      r.innerHTML = "";
+      for (var i = 0; i < 100; i++) {
+        r1 = die1 % 2;
+        r2 = die2 % 2;
+        switch (r1 + r2) {
+          case 1:
+            different += 1;
+            break;
+          case 0:
+          case 2:
+            same += 1;
+            break;
+        }
+        die1 = Math.floor(Math.random() * 6) + 1;
+        die2 = Math.floor(Math.random() * 6) + 1;
+      }
+      document.write("different = " + different);
+      document.write("<br>same = " + same);
+    </script>
+  </body>
+</html>

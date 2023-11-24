@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<style>
+div {font-size:20pt; color:purple;}
+</style></head>
+<body>
+<h2>주사위게임</h2>
+<hr>
+<div id="r"></div>
+<script>
+var r = document.getElementById("r");
+var die1 = Math.floor(Math.random()*6)+1 ;
+var die2 = Math.floor(Math.random()*6)+1 ;
+var sum=0, savepoint=0;
+var finished = false;
+r.innerHTML = "";
+
+while (!finished) {
+	sum = die1 + die2;
+	r.innerHTML += "sum = " + sum ;
+	
+		
+	
+
+
+
+    
+}
+</script></body></html>
